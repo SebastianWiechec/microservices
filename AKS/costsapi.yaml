@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: costsapi
+  labels:
+    app: costsapi
+spec:
+  replicas: 1 #5
+  template:
+    metadata:
+      name: costsapi
+      labels:
+        app: costsapi
+    spec:
+      containers:
+      - name: costsapi
+        image: carmanagement.azurecr.io/costsapi:latest
+        imagePullPolicy: IfNotPresent
+      restartPolicy: Always
+  selector:
+    matchLabels:
+      app: costsapi
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: costsapi
+spec:
+  selector:
+    app: costsapi
+  ports:
+    - port: 80
+  type: LoadBalancer

@@ -1,0 +1,190 @@
+{
+  "Routes": [
+    //User API
+    {
+      "DownstreamPathTemplate": "/api/User/",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "userapi",
+          "Port": "80"
+        }
+      ],
+      "UpstreamPathTemplate": "/User",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/User/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "userapi",
+          "Port": "80"
+        }
+      ],
+      "UpstreamPathTemplate": "/User/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
+    },
+    //Done API
+    {
+      "DownstreamPathTemplate": "/api/Done/",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "doneapi",
+          "Port": "80"
+        }
+      ],
+      "UpstreamPathTemplate": "/Done",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/Done/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "doneapi",
+          "Port": "80"
+        }
+      ],
+      "UpstreamPathTemplate": "/Done/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
+    },
+    //Material API
+    {
+      "DownstreamPathTemplate": "/api/Material/",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "materialapi",
+          "Port": "80"
+        }
+      ],
+      "UpstreamPathTemplate": "/Material",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/Material/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "materialapi",
+          "Port": "80"
+        }
+      ],
+      "UpstreamPathTemplate": "/Material/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
+    },
+    //Plan API
+    {
+      "DownstreamPathTemplate": "/api/Plan/",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "planapi",
+          "Port": "80"
+        }
+      ],
+      "UpstreamPathTemplate": "/Plan",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/Plan/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "planapi",
+          "Port": "80"
+        }
+      ],
+      "UpstreamPathTemplate": "/Plan/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
+    },
+
+    //Preweight API
+    {
+      "DownstreamPathTemplate": "/api/Preweight/",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "preweightapi",
+          "Port": "80"
+        }
+      ],
+      "UpstreamPathTemplate": "/Preweight",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/Preweight/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "Preweightapi",
+          "Port": "80"
+        }
+      ],
+      "UpstreamPathTemplate": "/Preweight/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
+    },
+    //Recipe API
+    {
+      "DownstreamPathTemplate": "/api/Recipe/",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "recipeapi",
+          "Port": "80"
+        }
+      ],
+      "UpstreamPathTemplate": "/Recipe",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/Recipe/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "recipeapi",
+          "Port": "80"
+        }
+      ],
+      "UpstreamPathTemplate": "/Recipe/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
+    },
+    //Warehouse API
+    {
+      "DownstreamPathTemplate": "/api/Warehouse/",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "warehouseapi",
+          "Port": "80"
+        }
+      ],
+      "UpstreamPathTemplate": "/Warehouse",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/Warehouse/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "warehouseapi",
+          "Port": "80"
+        }
+      ],
+      "UpstreamPathTemplate": "/Warehouse/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
+    }
+  ]
+}
+
+//  { //    "Key": "Transactions", //    "Config": [ //      { //        "Name": "transactionsapi", //        "Version": "v1", //        "Url": "http://localhost:7005/swagger/v1/swagger.json" //      } //    ] //  } //,
+//{ //  "Key": "orders", //  "Config": [ //    { //      "Name": "Orders API", //      "Version": "v0.9", //      "Url": "http://localhost:5200/swagger/v0.9/swagger.json" //    }, //    { //      "Name": "Orders API", //      "Version": "v1",
+//      "Url": "http://localhost:5200/swagger/v1/swagger.json" //    }, //    { //      "Name": "Orders API", //      "Version": "v2",
+//      "Url": "http://localhost:5200/swagger/v2/swagger.json" //    }, //    { //      "Name": "Orders API", //      "Version": "v3",
+//      "Url": "http://localhost:5200/swagger/v3/swagger.json" //    } //  ] //}
+//] //"GlobalConfiguration": { //  "BaseUrl": "http://localhost" //}
+//}http: //localhost"
+//}
+//}

@@ -1,0 +1,83 @@
+version: '3.4'
+
+services:
+
+    done.api:
+        container_name: doneapi
+        environment:
+            - ASPNETCORE_ENVIRONMENT=Development
+        volumes:
+            - ${HOME}/.microsoft/usersecrets/:/root/.microsoft/usersecrets
+        ports:
+            - "7007:80"
+
+    material.api:
+        container_name: materialapi
+        environment:
+            - ASPNETCORE_ENVIRONMENT=Development
+        volumes:
+            - ${HOME}/.microsoft/usersecrets/:/root/.microsoft/usersecrets
+        ports:
+            - "7006:80"
+
+    plan.api:
+        container_name: planapi
+        environment:
+            - ASPNETCORE_ENVIRONMENT=Development
+        volumes:
+            - ${HOME}/.microsoft/usersecrets/:/root/.microsoft/usersecrets
+        ports:
+            - "7005:80"
+
+    preweight.api:
+        container_name: preweightapi
+        environment:
+            - ASPNETCORE_ENVIRONMENT=Development
+        volumes:
+            - ${HOME}/.microsoft/usersecrets/:/root/.microsoft/usersecrets
+        ports:
+            - "7004:80"
+
+    recipe.api:
+        container_name: recipeapi
+        environment:
+            - ASPNETCORE_ENVIRONMENT=Development
+        volumes:
+            - ${HOME}/.microsoft/usersecrets/:/root/.microsoft/usersecrets
+        ports:
+            - "7003:80"
+
+    warehouse.api:
+        container_name: warehouseapi
+        environment:
+            - ASPNETCORE_ENVIRONMENT=Development
+        volumes:
+            - ${HOME}/.microsoft/usersecrets/:/root/.microsoft/usersecrets
+        ports:
+            - "7002:80"
+
+    user.api:
+        container_name: userapi
+        environment:
+            - ASPNETCORE_ENVIRONMENT=Development
+        volumes:
+            - ${HOME}/.microsoft/usersecrets/:/root/.microsoft/usersecrets
+        ports:
+            - "7001:80"
+  
+    apigateway:
+        container_name: apigateway
+        environment:
+            - ASPNETCORE_ENVIRONMENT=Development
+        depends_on:
+            - user.api
+            - done.api
+            - material.api
+            - plan.api
+            - preweight.api
+            - recipe.api
+            - warehouse.api
+        volumes:
+            - ${HOME}/.microsoft/usersecrets/:/root/.microsoft/usersecrets
+        ports:
+            - "7000:80"

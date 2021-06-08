@@ -1,0 +1,57 @@
+version: '3.4'
+
+services:
+    done.api:
+        image: ${DOCKER_REGISTRY-}doneapi
+        hostname: doneapi
+        build:
+            context: .
+            dockerfile: src/Done/Done.Api/Dockerfile
+
+    material.api:
+        image: ${DOCKER_REGISTRY-}materialapi
+        hostname: materialapi
+        build:
+            context: .
+            dockerfile: src/Material/Material.Api/Dockerfile
+
+    plan.api:
+        image: ${DOCKER_REGISTRY-}planapi
+        hostname: planapi
+        build:
+            context: .
+            dockerfile: src/Plan/Plan.Api/Dockerfile
+
+    preweight.api:
+        image: ${DOCKER_REGISTRY-}preweightapi
+        hostname: preweightapi
+        build:
+            context: .
+            dockerfile: src/Preweight/Preweight.Api/Dockerfile
+
+    recipe.api:
+        image: ${DOCKER_REGISTRY-}recipeapi
+        hostname: recipeapi
+        build:
+            context: .
+            dockerfile: src/Recipe/Recipe.Api/Dockerfile
+
+    warehouse.api:
+        image: ${DOCKER_REGISTRY-}warehouseapi
+        hostname: warehouseapi
+        build:
+            context: .
+            dockerfile: src/Warehouse/Warehouse.Api/Dockerfile
+
+    user.api:
+        image: ${DOCKER_REGISTRY-}userapi
+        hostname: userapi
+        build:
+            context: .
+            dockerfile: src/User/User.API/Dockerfile
+
+    apigateway:
+        image: ${DOCKER_REGISTRY-}apigateway
+        build:
+            context: .
+            dockerfile: src/ApiGateway/APIGateway/Dockerfile
